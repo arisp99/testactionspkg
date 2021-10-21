@@ -1,0 +1,37 @@
+---
+title: "Read a File"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{read-file}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(testactionspkg)
+path <- system.file("extdata", "small.csv", package = "testactionspkg")
+```
+
+Attempt to read a file and manipulate .col_names.
+```{r col_names}
+testactionspkg::read(path, .col_names = FALSE)
+
+testactionspkg::read(path, .col_names = TRUE)
+```
+
+Attempt to read a file and manipulate .name_repair
+```{r name_repair}
+testactionspkg::read(path, .name_repair = "minimal")
+
+testactionspkg::read(path, .name_repair = "unique")
+
+testactionspkg::read(path, .name_repair = "universal")
+```
+
