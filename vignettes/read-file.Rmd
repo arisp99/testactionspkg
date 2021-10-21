@@ -24,23 +24,3 @@ Attempt to read a file and manipulate .col_names.
 testactionspkg::read(path, .col_names = FALSE)
 ```
 
-
-```{r col_names T}
-testactionspkg::read(path, .col_names = TRUE)
-```
-
-Attempt to read a file and manipulate .name_repair
-```{r name_repair minimal}
-testactionspkg::read(path, .name_repair = "minimal")
-```
-
-
-```{r name_repair unique}
-testactionspkg::read(path, .name_repair = "unique")
-```
-
-
-```{r name_repair universal}
-testactionspkg::read(path, .name_repair = "universal")
-```
-
