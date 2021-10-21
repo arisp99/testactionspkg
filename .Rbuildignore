@@ -1,2 +1,4 @@
 ^testactionspkg\.Rproj$
 ^\.Rproj\.user$
+^\.github$
+^LICENSE\.md$
