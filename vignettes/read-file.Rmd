@@ -40,7 +40,7 @@ vroom::vroom(
     file = local_file,
     col_names = FALSE,
     col_select = c(1, 2),
-    show_col_types = FALSE,
+    show_col_types = FALSE
   )
 ```
 
