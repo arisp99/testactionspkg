@@ -39,8 +39,13 @@ vroom::vroom_write(data, local_file)
 vroom::vroom(
     file = local_file,
     col_names = FALSE,
+    col_select = dplyr::everything(),
     show_col_types = FALSE,
   )
+```
+
+```{r}
+# testactionspkg::read(local_file)
 ```
 
 
