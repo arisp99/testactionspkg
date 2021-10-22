@@ -12,7 +12,9 @@ RoxygenNote: 7.1.2
 Imports: 
     dplyr,
     magrittr,
-    vroom
+    tibble,
+    vroom,
+    withr
 URL: https://github.com/arisp99/testactionspkg
 BugReports: https://github.com/arisp99/testactionspkg/issues
 Suggests: 
