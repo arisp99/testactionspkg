@@ -14,11 +14,11 @@ read(
 \arguments{
 \item{.file}{Path to a local file.}
 
-\item{.col_names}{From vroom}
+\item{.col_names}{Copied from vroom.}
 
-\item{.col_select}{From vroom}
+\item{.col_select}{Copied from vroom.}
 
-\item{.name_repair}{From vroom}
+\item{.name_repair}{Copied from vroom.}
 }
 \description{
 Basic function to read in a file
