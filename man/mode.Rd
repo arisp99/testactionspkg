@@ -10,7 +10,7 @@ mode(x)
 \item{x}{A vector or list.}
 }
 \value{
-The mode of the data.
+The mode of the input.
 }
 \description{
 Compute the arithmetic mode of a set of data. The mode is the most commonly
