@@ -1,9 +1,9 @@
 #' Basic function to read in a file
 #'
 #' @param .file Path to a local file.
-#' @param .col_names From vroom
-#' @param .col_select From vroom
-#' @param .name_repair From vroom
+#' @param .col_names Copied from vroom.
+#' @param .col_select Copied from vroom.
+#' @param .name_repair Copied from vroom.
 #'
 #' @export
 read <- function(.file,
