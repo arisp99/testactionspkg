@@ -5,6 +5,7 @@ on:
     paths: ["R/**"]
   pull_request:
     paths: ["R/**"]
+  workflow_dispatch:
 
 name: Style
 
@@ -28,6 +29,28 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::styler
+          needs: styler
+
+      - name: Enable styler cache
+        run: styler::cache_activate(verbose = TRUE)
+        shell: Rscript {0}
+
+      - name: Determine cache location
+        id: styler-loc
+        run: |
+          cat(
+            "##[set-output name=loc;]",
+            styler::cache_info(format = "tabular")$location,
+            "\n",
+            sep = ""
+          )
+        shell: Rscript {0}
+
+      - name: Cache styler
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.styler-loc.outputs.loc }}
+          key: ${{ runner.os }}-styler
 
       - name: Style
         run: styler::style_pkg()
@@ -39,5 +62,5 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add R/\*
           git commit -m "Style code" || echo "No changes to commit"
-          git pull --ff-only || echo "No remote changes"
-          git push origin || echo "No changes to commit"
+          git pull --ff-only
+          git push origin
