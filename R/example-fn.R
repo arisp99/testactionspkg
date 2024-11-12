@@ -13,6 +13,6 @@
 #' mode(list(1, 1, 2))
 #' mode(c(1, NA, 1))
 mode <- function(x) {
-  unique <- unique(x)
+  unique<-unique(x)
   unique[which.max(tabulate(match(x,unique)))]
 }
