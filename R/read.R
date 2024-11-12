@@ -10,9 +10,10 @@ read <- function(.file,
                  .col_names = FALSE,
                  .col_select = everything(),
                  .name_repair = "unique") {
-  vroom::vroom(file = .file,
-    col_names=.col_names,
-    col_select=.col_select,
+  vroom::vroom(
+    file = .file,
+    col_names = .col_names,
+    col_select = .col_select,
     show_col_types = FALSE,
     .name_repair = .name_repair
   )

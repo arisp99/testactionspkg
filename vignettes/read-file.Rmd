@@ -22,26 +22,26 @@ path <- system.file("extdata", "small.csv", package = "testactionspkg")
 Make a reprex
 ```{r reprex}
 data <- tibble::tribble(
-              ~X1,                ~X2,                ~X3,
-        "Gene ID",    "PF3D7_0106300",    "PF3D7_0523000",
-           "Gene",             "atp6",             "mdr1",
-  "Mutation Name",   "atp6-Ala623Glu",    "mdr1-Asn86Tyr",
-     "ExonicFunc", "missense_variant", "missense_variant",
-      "AA Change",        "Ala623Glu",         "Asn86Tyr",
-       "Targeted",              "Yes",              "Yes",
-     "D10-JJJ-23",                "0",               "13",
-     "D10-JJJ-43",                "0",                "0"
-  )
+  ~X1, ~X2, ~X3,
+  "Gene ID", "PF3D7_0106300", "PF3D7_0523000",
+  "Gene", "atp6", "mdr1",
+  "Mutation Name", "atp6-Ala623Glu", "mdr1-Asn86Tyr",
+  "ExonicFunc", "missense_variant", "missense_variant",
+  "AA Change", "Ala623Glu", "Asn86Tyr",
+  "Targeted", "Yes", "Yes",
+  "D10-JJJ-23", "0", "13",
+  "D10-JJJ-43", "0", "0"
+)
 
 local_file <- withr::local_tempfile(fileext = ".csv")
 vroom::vroom_write(data, local_file)
 
 vroom::vroom(
-    file = local_file,
-    col_names = FALSE,
-    col_select = c(1, 2),
-    show_col_types = FALSE
-  )
+  file = local_file,
+  col_names = FALSE,
+  col_select = c(1, 2),
+  show_col_types = FALSE
+)
 ```
 
 ```{r}
